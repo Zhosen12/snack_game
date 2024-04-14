@@ -129,7 +129,7 @@ class Food:
     def generate_food(self, snack=None):
         while True:
             self.pos = random.randint(0, CELLS[0] - 1), random.randint(0, CELLS[1] - 1)
-            if self.pos not in snack.body and self.pos not in snack.head:
+            if self.pos not in snack.body and self.pos != snack.head:
                 break
         self.score = 1
         draw_cell(self.pos, FOOD_COLOR)
